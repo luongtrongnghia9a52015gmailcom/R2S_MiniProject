@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+	<div class="panel-heading">DANH SÁCH TÀI KHOẢN</div>
+	<table class="table table-condensed">
+			<thead class="bg-success">
+				<tr>
+					<th>Tên tài khoản</th>
+					<th>Mật khẩu</th>
+					<th>Họ tên</th>
+					<th>Ngày sinh</th>
+					<th>Email</th>
+					<th>Địa chỉ</th>
+					<th>Hình ảnh</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="account in pager.accounts">
+					<td>{{account.username}}</td>
+					<td>{{account.password}}</td>
+					<td>{{account.fullname}}</td>
+					<td>{{account.birthdate | date: 'MM-dd-yyyy'}}</td>
+					<td>{{account.email}}</td>
+					<td>{{account.address}}</td>
+					<td>{{account.photo}}</td>
+					<td>
+						<div class="btn-group btn-group-xs">
+							<button ng-click="edit(account)" class="btn btn-warning glyphicon glyphicon-edit"></button>
+							<button ng-click="delete(account)" class="btn btn-danger glyphicon glyphicon-trash"></button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="panel-footer text-center">
+			<button ng-click="pager.first()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-up"></b> 
+			</button>
+			<button ng-click="pager.prev()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-left"></b> 
+			</button>
+			<button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+			<button ng-click="pager.next()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-hand-right"></b> 
+			</button>
+			<button ng-click="pager.last()" class="btn btn-danger">
+				<b class="glyphicon glyphicon-hand-down"></b> 
+			</button>
+		</div>
+</div>

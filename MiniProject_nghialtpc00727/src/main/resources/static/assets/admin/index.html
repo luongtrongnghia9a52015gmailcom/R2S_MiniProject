@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Store Administation</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+<body class="container" ng-app="admin-app">
+	<header class="row">
+		<h2 class="alert alert-success">TRANG QUẢN TRỊ</h2>
+	</header>
+	<div class="row">
+		<nav class="navbar navbar-inverse" style="font-variant: inherit;">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Trang chủ</a> </li>
+					<li><a href="#!account">Tài khoản</a> </li>
+					<li><a href="#!authority">Phân quyền</a> </li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<main>
+		<p class="ng-view" />
+	</main>
+	<footer>
+		<div class="panel panel-default">
+			<div class="panel-body text-center">
+				<h3>FPT Polytechnic &copy; 2021.All rights reserved.</h3>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="/assets/admin/admin-app.js"></script>
+	<script src="/assets/admin/account/account-ctrl.js"></script>
+	<script src="/assets/admin/authority/authority-ctrl.js"></script>
+</body>
+</html>

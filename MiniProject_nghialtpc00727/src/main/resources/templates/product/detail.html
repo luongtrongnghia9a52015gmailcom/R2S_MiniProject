@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www/thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main th:object="${item}" class="poly-item-detail row">
+	<div class="row">
+		<div class="row">
+			<div class="col-main">
+				<div class="block-newarrial col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="slider-inner">
+						<p class="block-title">
+							<span class="title">Chi tiết sản phẩm</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="main-container col2-right-layout col-sm-4"
+		style="padding-left: 50px">
+		<div class="main">
+			<div class="container">
+				<br>
+				<div class="row">
+					<div class="row">
+						<div class="col-main col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div id="messages_product_view"></div>
+								<div class="product-view">
+									<div class="product-essential">
+
+
+										<form enctype="multipart/form-data"
+											id="product_addtocart_form" method="post" action="#">
+											<input type="hidden" value="MG4MpXwwnitHheJz" name="form_key">
+											<div class="no-display">
+												<input type="hidden" value="916" name="product"> <input
+													type="hidden" value="" id="related-products-field"
+													name="related_product">
+											</div>
+
+											<div
+												class="product-img-box col-lg-6 col-md-7 col-sm-7 col-xs-12">
+												<div class="inner">
+													<div class="img-left">
+														<div class="product-image product-image-zoom">
+															<div class="product-image-gallery">
+																<img width="380" height="570"
+																	title="Plaid Cotton Shirt-Khaki-M"
+																	alt="Plaid Cotton Shirt-Khaki-M"
+																	th:src="@{|/assets/images/*{image}|}"
+																	class="gallery-image visible" id="image-main">
+															</div>
+														</div>
+													<button class="btn-cart" th:attr="ng-click=@{|cart.add(*{id})|}">
+														<span>Thêm vào giỏ hàng</span>
+													</button>
+													</div>
+
+													<div class="more-views">
+														<div class="navslider">
+															<a class="prev">prev</a> <a class="next">next</a>
+															<div class="inner" th:each="p: *{category.products}">
+																<div class="jCarouselLite">
+																	<ul class="product-image-thumbs">
+																		<li><a data-image-index="0" title=""
+																			th:href="@{|/product/detail/${p.id}|}"
+																			class="thumb-link"> <img style="height: 100px"
+																				alt="" th:src="|/assets/images/${p.image}|">
+																		</a></li>
+
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<!--more-views-->
+													</div>
+									
+												</div>
+											</div>
+											<!-- -- thong tin -- -->
+
+											<div
+												class="product-shop col-lg-3 col-md-12 col-sm-5 col-xs-12">
+												<div class="box-left">
+													<div class="product-name">
+														<h1 th:text=*{name}></h1>
+													</div>
+													<div class="rating">
+														<div class="ratings">
+															<div class="rating-box">
+																<div style="width: 87%" class="rating"></div>
+															</div>
+														</div>
+														<p class="rating-links">
+															<a href="#">1 (vote)</a> <span class="separator">|</span>
+															<a href="#" class="re-temp">Add Review</a>
+														</p>
+													</div>
+													<div class="product-code box-style">
+														<ul>
+															<li class="first">Mã sản phẩm</li>
+															<li class="last" th:text=*{id}></li>
+														</ul>
+													</div>
+													<div class="availability in-stock box-style">
+														<ul>
+															<li class="first">Tình trạng</li>
+															<li class="last">Có sẳn</li>
+														</ul>
+													</div>
+													<div class="short-description">
+														<div class="std">Sản phẩm được nhập từ các công ty
+															đối tác có uy tín nhiều năm trong lĩnh vực, chất được
+															tuyển chọn một cách kỹ lưỡng nhằm mang lại cho khách hàng
+															cái nhìn cũng như sự trãi nghiệm tốt nhất đối với từng
+															sản phẩm.</div>
+													</div>
+													<div class="wrap-ns-price">
+														<div class="price-box">
+															<span class="regular-price"> <span class="price"
+																th:text=*{price}></span> $
+															</span>
+														</div>
+														<div class="wrap-new-sale"></div>
+													</div>
+
+													<div class="product-addto">
+														<div class="product-addto-inner">
+															<div id="product-options-wrapper" class="product-options">
+																<div class="last">
+																	<div class="group-item  first item1">
+																		<span><label>Màu</label></span>
+																		<div class="option-color">
+																			<div class="input-box">
+																				<ul class="options-list" id="options-41-list">
+																					<li><input type="radio" checked="checked"
+																						value="" name="options[41]"
+																						class="radio product-custom-option"
+																						id="options_41"><span class="label"><label
+																							for="options_41">None</label></span></li>
+																					<li class="item2"
+																						style="background: rgb(77, 109, 189) none repeat scroll 0% 0%;"><input
+																						type="radio" value="201"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>Blue_#4d6dbd <span
+																								class="price-notice">+<span class="price">$1.00</span></span>
+																						</label></span></li>
+																					<li
+																						style="background: rgb(114, 178, 38) none repeat scroll 0% 0%;"><input
+																						type="radio" value="202"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>Green_#72b226
+																								<span class="price-notice">+<span
+																									class="price">$2.00</span></span>
+																						</label></span></li>
+																					<li
+																						style="background: rgb(47, 188, 218) none repeat scroll 0% 0%;"><input
+																						type="radio" value="203"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>Indigo_#2fbcda
+																								<span class="price-notice">+<span
+																									class="price">$3.00</span></span>
+																						</label></span></li>
+																					<li
+																						style="background: rgb(251, 93, 93) none repeat scroll 0% 0%;"><input
+																						type="radio" value="204"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>Red_#fb5d5d <span
+																								class="price-notice">+<span class="price">$4.00</span></span>
+																						</label></span></li>
+																					<li
+																						style="background: rgb(255, 224, 12) none repeat scroll 0% 0%;"><input
+																						type="radio" value="205"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>Yellow_#ffe00c
+																								<span class="price-notice">+<span
+																									class="price">$5.00</span></span>
+																						</label></span></li>
+																				</ul>
+																				<span class="group-color"> <input
+																					type="hidden" value="#4d6dbd" name="options_41_2"
+																					class="item_options"> <input type="hidden"
+																					value="#72b226" name="options_41_3"
+																					class="item_options"> <input type="hidden"
+																					value="#2fbcda" name="options_41_4"
+																					class="item_options"> <input type="hidden"
+																					value="#fb5d5d" name="options_41_5"
+																					class="item_options"> <input type="hidden"
+																					value="#ffe00c" name="options_41_6"
+																					class="item_options">
+																				</span>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="group-item  last first">
+																		<span><label>Size</label></span>
+																		<div class="last option-size">
+																			<div class="input-box">
+																				<ul class="options-list" id="options-42-list">
+																					<li><input type="radio" checked="checked"
+																						value="" name="options[42]"
+																						class="radio product-custom-option"
+																						id="options_42"><span class="label"><label
+																							for="options_42">None</label></span></li>
+																					<li class="item2"><input type="radio"
+																						value="206" class="radio  product-custom-option"><span
+																						class="label"><label>2XL <span
+																								class="price-notice">+<span class="price">$1.00</span></span></label></span></li>
+																					<li><input type="radio" value="207"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>L <span
+																								class="price-notice">+<span class="price">$2.00</span></span></label></span></li>
+																					<li><input type="radio" value="209"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>M <span
+																								class="price-notice">+<span class="price">$4.00</span></span></label></span></li>
+																					<li><input type="radio" value="208"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>S <span
+																								class="price-notice">+<span class="price">$3.00</span></span></label></span></li>
+																					<li><input type="radio" value="210"
+																						class="radio  product-custom-option"><span
+																						class="label"><label>XL <span
+																								class="price-notice">+<span class="price">$5.00</span></span></label></span></li>
+																				</ul>
+
+																			</div>
+																		</div>
+																	</div>
+
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<!-- -- end thong tin -- -->
+											<div class=""></div>
+										</form>
+
+
+										<div id="product-tabs">
+											<div class="inner">
+												<div class="tab-content">
+													<div id="tab7" class="tab-pane active">
+														<div class="inner-tab">
+															<div id="decription" style="display: block">
+																<div class="std">
+																	<div
+																		class="des-right col-lg-8 col-md-8 col-sm-8 col-xs-12">
+																		<ul class="item-images">
+																			<li><img src="/assets/images/banner/ca-b42.png"
+																				alt=""></li>
+																			<li><img src="/assets/images/banner/ca-b43.png"
+																				alt=""></li>
+																			<li><img src="/assets/images/banner/ca-b44.png"
+																				alt=""></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+
+
+
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- -- end chi tiet -- -->
+			</div>
+		</div>
+	</div>
+	</main>
+</body>
+</html>
